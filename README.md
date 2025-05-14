@@ -66,11 +66,11 @@ The project is divided into three main components:
 
 4. Initialize the database:
    ```bash
-   ./setupDb.sh
-   ```
-   or
-   ```bash
    npx prisma migrate dev
+   ```
+   and
+   ```bash
+   ./setupDb.sh
    ```
 
 5. Start the server:
