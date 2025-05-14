@@ -200,7 +200,7 @@ After adding entries to these JSON files, you'll need to implement the correspon
 ## Contributors
 
 - [Valentin PY](https://github.com/ValentinPy1)
-- Mobile: [Gredzy] (https://github.com/gredzy)
+- Mobile: [Gredzy](https://github.com/gredzy)
 
 ## License
 
