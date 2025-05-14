@@ -1,0 +1,175 @@
+### Register
+
+POST http://localhost:8080/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test1",
+    "username": "test"
+}
+
+### Login
+
+POST http://localhost:8080/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test1"
+}
+
+### LoginAdmin
+
+POST http://localhost:8080/auth/adminlogin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "henry@gmail.com",
+    "password": "test1"
+}
+
+###Get Me
+GET http://localhost:8080/auth/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+
+###Change pswd
+POST http://localhost:8080/auth/changepswd HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+{
+    "oldpassword": "test1",
+    "newpassword": "test2"
+}
+
+### get About
+
+GET http://localhost:8080/about.json HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Admin get all users
+
+GET http://localhost:8080/admin/users HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Admin promote user
+PUT http://localhost:8080/admin/promote/henry@gmail.com
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Admin demote user
+PUT http://localhost:8080/admin/demote/henry@gmail.com
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Admin Ban user
+PUT http://localhost:8080/admin/ban/test@gmail.com
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Admin Unban user
+PUT http://localhost:8080/admin/unban/test@gmail.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Admin callback disc user
+GET  http://localhost:8080/discordbot/callback HTTP/1.1
+
+###Get services
+GET http://localhost:8080/actrig/getservices HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Create service
+POST http://localhost:8080/actrig/addservice HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+{
+   "name": "Discord",
+   "logo": "assets/discord.xml",
+   "color": "#7289da",
+    "description": "Discord is a voice, video and text communication service to talk and hang out with your friends and communities.",
+    "oauth2url" : "http://localhost:8080/oauth2/discordbot/redirect"
+}
+
+# {
+#    "name": "Gmail",
+#    "logo": "",
+#    "color": "#d44638",
+#     "description": "Gmail is a free email service developed by Google. Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols.",
+# }
+
+# {
+#    "name": "Instagram",
+#    "logo": "",
+#    "color": "#e1306c",
+#     "description": "Instagram is an American photo and video sharing social networking service owned by Facebook, created by Kevin Systrom and Mike Krieger and originally launched on iOS in October 2010."
+# }
+
+
+
+###Get triggers
+GET http://localhost:8080/actrig/gettriggers HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Create trigger
+POST http://localhost:8080/actrig/addtrigger HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+{
+    "name": "discord pin msg",
+    "servicename": "Discord",
+    "func": "./discord/pinnedmsg.trigger",
+    "description": "get a trigger when a msg is pinned",
+    "toSend": [
+        {
+            "dropdown" : {
+                "name": "ServerName",
+                "object": ["name", "guildId"],
+                "render": "name",
+                "return": "guildId",
+                "choices": []
+            }
+        }
+    ]
+
+}
+
+###Get actions
+GET http://localhost:8080/actrig/getactions HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Get triggers of service
+GET http://localhost:8080/actrig/gettriggers/Discord HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Get actions of service
+GET http://localhost:8080/actrig/getactions/Discord HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Post creat task
+POST http://localhost:8080/task/new HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+{
+   "name": "send email to jeremy",
+   "triggerid": "57d73501-5f98-4cbc-9a2d-002da0693aed",
+   "actionid": "a7f7ad8d-b1e1-4957-94f0-6d4e0b1e605a",
+   "triggerdata": {"guildId": "838022470115262495"},
+   "actiondata": {"recipient" : "jeremy.claramonte@epitech.eu", "subject" : "look", "body" : "help me"}
+}
+
+###Get all my tasks
+GET http://localhost:8080/task/mytasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Delete task
+DELETE http://localhost:8080/task/delete/488f3371-e11d-4657-8a40-eaf4aaf77458 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4
+
+###Get services by trigger/action id
+GET http://localhost:8080/actrig/getservices/6ae2abe1-cc9e-42cc-a17b-77c6ba5bac80 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbnJAZ21haWwuY29tIiwiaWQiOiI2ODkxNWVkOC1hZDgwLTQ2ZWEtOTI5Mi01YTM0NjZmYWMwYzEiLCJpYXQiOjE2OTg3NTk2NjR9.m_bpZHzqRiecMiK8fXQJM_u9W0If-73DKr3p-LCVSW4

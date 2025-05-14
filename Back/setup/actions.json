@@ -1,0 +1,121 @@
+[
+    {
+        "name": "discordmsg",
+        "servicename": "Discord",
+        "func": "./discord/sendmsg.action",
+        "description": "send a msg to a channel",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "ServerName",
+                    "render": "name",
+                    "return": "guildId",
+                    "choices": [
+                    ]
+                }
+            },
+            {
+                "text" : {
+                    "return": "body",
+                    "placeholder": "Message"
+                }
+            },
+            {
+                "text" : {
+                    "return": "ChannelName",
+                    "placeholder": "Channel Name"
+                }
+            }
+        ]
+    },
+    {
+        "name" : "outlookSendEmail",
+        "servicename": "Microsoft",
+        "func": "./microsoft/sendemail.action",
+        "description": "send an email",
+        "toSend": [
+            {
+                "text" : {
+                    "return": "recipient",
+                    "placeholder": "Recipient"
+                }
+            },
+            {
+                "text" : {
+                    "return": "subject",
+                    "placeholder": "Subject"
+                }
+            },
+            {
+                "text" : {
+                    "return": "body",
+                    "placeholder": "Body"
+                }
+            }
+        ]
+    },
+    {
+        "name" : "googleSendEmail",
+        "servicename": "Google",
+        "func": "./google/sendemail.action",
+        "description": "send an email",
+        "toSend": [
+            {
+                "text" : {
+                    "return": "recipient",
+                    "placeholder": "Recipient"
+                }
+            },
+            {
+                "text" : {
+                    "return": "subject",
+                    "placeholder": "Subject"
+                }
+            },
+            {
+                "text" : {
+                    "return": "body",
+                    "placeholder": "Body"
+                }
+            }
+        ]
+    },
+    {
+        "name" : "googleAddCalendar",
+        "servicename": "Google",
+        "func": "./google/addtocalendar.action",
+        "description": "add event to your calendar",
+        "toSend": [
+            {
+                "text" : {
+                    "return": "body",
+                    "placeholder": "Event name"
+                }
+            },
+            {
+                "date" : {
+                    "return": "startDate",
+                    "placeholder": "Start year-month-day"
+                }
+            },
+            {
+                "time" : {
+                    "return": "startHour",
+                    "placeholder": "Start Hour:Minute"
+                }
+            },
+            {
+                "date" : {
+                    "return": "endDate",
+                    "placeholder": "End year-month-day"
+                }
+            },
+            {
+                "time" : {
+                    "return": "endHour",
+                    "placeholder": "End Hour:Minute"
+                }
+            }
+        ]
+    }
+]

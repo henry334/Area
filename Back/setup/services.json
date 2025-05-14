@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Discord",
+        "description": "Discord is a communication platform for creating communities, offering voice, video, and text channels, along with tools for moderation and integration with other services.",
+        "logo" : "https://assets.ifttt.com/images/channels/179823445/icons/monochrome_large.png",
+        "color" : "#7289da",
+        "oauth2url" : "https://allowed-luckily-woodcock.ngrok-free.app/oauth2/discordbot/redirect"
+    },
+    {
+        "name": "EtherScan",
+        "description": "Etherscan is a blockchain explorer for the Ethereum network, enabling users to search and verify transactions, addresses, and other blockchain data in real-time.",
+        "logo" : "https://cdn-images-1.medium.com/max/176/1*MxpMgwpR-_fXBou_ftL4qg@2x.png",
+        "color" : "#6bb6e3",
+        "oauth2url" : ""
+    },
+    {
+        "name": "Microsoft",
+        "description": "Microsoft is a multinational tech company known for products like Windows OS, Microsoft Office, Azure cloud services, Xbox gaming consoles, and Surface PCs.",
+        "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png",
+        "color" : "#00a1f1",
+        "oauth2url" : "https://allowed-luckily-woodcock.ngrok-free.app/oauth2/microsoft/redirect"
+    },
+    {
+        "name": "Google",
+        "description": "Google is a tech giant offering internet-based services and products including a search engine, online advertising, cloud computing, and software like Android OS and Google Workspace.",
+        "logo" : "https://ragsdalemartin.com/wp-content/uploads/2020/07/white-google-logo.png",
+        "color" : "#febd00",
+        "oauth2url" : "https://allowed-luckily-woodcock.ngrok-free.app/oauth2/google/redirect"
+    },
+    {
+        "name": "WeatherApi",
+        "description": "WheaterApi will allow you to get the weather of a city",
+        "logo" : "https://blog.weatherbit.io/content/images/size/w1200/2022/12/blog4.png",
+        "color" : "#000066",
+        "oauth2url" : ""
+    }
+]

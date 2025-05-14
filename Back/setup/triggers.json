@@ -1,0 +1,233 @@
+[
+    {
+        "name": "PinMessage",
+        "servicename": "Discord",
+        "func": "./discord/pinnedmsg.trigger",
+        "description": "get a trigger when a msg is pinned",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "ServerName",
+                    "render": "name",
+                    "return": "guildId",
+                    "choices": []
+                }
+            }
+        ]
+    },
+    {
+        "name": "SpecifiqueMessage",
+        "servicename": "Discord",
+        "func": "./discord/specifiquemessage.trigger",
+        "description": "get a trigger when a specifique message is sent",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "ServerName",
+                    "render": "name",
+                    "return": "guildId",
+                    "choices": []
+                }
+            },
+            {
+                "text" : {
+                    "return" : "message",
+                    "placeholder": "Message"
+                }
+            }
+        ]
+    },
+    {
+        "name": "GasPrice",
+        "servicename": "EtherScan",
+        "func": "./etherScan/etherscangas.trigger",
+        "description": "get a trigger when gas price is at a certain amount",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "Comparative Operator",
+                    "render": "Operator",
+                    "return": "value",
+                    "choices": [
+                        {"render" : ">", "return": ">"},
+                        {"render" : "<", "return": "<"},
+                        {"render" : "=", "return": "="}
+                    ]
+                }
+            },
+            {
+                "dropdown" : {
+                    "name": "Polling Interval",
+                    "render": "Polling",
+                    "return": "time",
+                    "choices": [
+                        {"render" : "2 minute", "return": 2},
+                        {"render" : "4 minutes", "return": 4},
+                        {"render" : "10 minutes", "return": 10},
+                        {"render" : "15 minutes", "return": 15},
+                        {"render" : "30 minutes", "return": 30}
+                    ]
+                }
+            },
+            {
+                "text" : {
+                    "return" : "gasPrice",
+                    "placeholder": "gasPrice"
+                }
+            }
+        ]
+    },
+    {
+        "name": "NewEmail",
+        "servicename": "Microsoft",
+        "func": "./microsoft/checkemail.trigger",
+        "description": "get trigger when you receive an email",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "Polling Interval",
+                    "render": "Polling",
+                    "return": "time",
+                    "choices": [
+                        {"render" : "2 minute", "return": 2},
+                        {"render" : "4 minutes", "return": 4},
+                        {"render" : "10 minutes", "return": 10},
+                        {"render" : "15 minutes", "return": 15},
+                        {"render" : "30 minutes", "return": 30}
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "ethersUsPrice",
+        "servicename": "EtherScan",
+        "func": "./etherScan/etherusdprice.trigger",
+        "description": "get a trigger when eth price is at a certain amount",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "Comparative Operator",
+                    "render": "Operator",
+                    "return": "value",
+                    "choices": [
+                        {"render" : ">", "return": ">"},
+                        {"render" : "<", "return": "<"},
+                        {"render" : "=", "return": "="}
+                    ]
+                }
+            },
+            {
+                "dropdown" : {
+                    "name": "Polling Interval",
+                    "render": "Polling",
+                    "return": "time",
+                    "choices": [
+                        {"render" : "2 minute", "return": 2},
+                        {"render" : "4 minutes", "return": 4},
+                        {"render" : "10 minutes", "return": 10},
+                        {"render" : "15 minutes", "return": 15},
+                        {"render" : "30 minutes", "return": 30}
+                    ]
+                }
+            },
+            {
+                "text" : {
+                    "return" : "ethPrice",
+                    "placeholder": "etherPrice"
+                }
+            }
+        ]
+    },
+    {
+        "name": "NewCalendarEvent",
+        "servicename": "Google",
+        "func": "./google/newcalendarevent.trigger",
+        "description": "get a trigger when you have a new calendar event",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "Polling Interval",
+                    "render": "Polling",
+                    "return": "time",
+                    "choices": [
+                        {"render" : "2 minute", "return": 2},
+                        {"render" : "4 minutes", "return": 4},
+                        {"render" : "10 minutes", "return": 10},
+                        {"render" : "15 minutes", "return": 15},
+                        {"render" : "30 minutes", "return": 30}
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "Weather",
+        "servicename": "WeatherApi",
+        "func": "./weather/weather.trigger",
+        "description": "get a trigger when a temperature is at a certain amount",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "Comparative Operator",
+                    "object": ["Operator", "value"],
+                    "render": "Operator",
+                    "return": "value",
+                    "choices": [
+                        {"render" : ">=", "return": ">="},
+                        {"render" : "<=", "return": "<="},
+                        {"render" : "=", "return": "="}
+                    ]
+                }
+            },
+            {
+                "dropdown" : {
+                    "name": "Polling Interval",
+                    "render": "Polling",
+                    "return": "time",
+                    "choices": [
+                        {"render" : "2 minute", "return": 2},
+                        {"render" : "4 minutes", "return": 4},
+                        {"render" : "10 minutes", "return": 10},
+                        {"render" : "15 minutes", "return": 15},
+                        {"render" : "30 minutes", "return": 30}
+                    ]
+                }
+            },
+            {
+                "text" : {
+                    "return" : "temp",
+                    "placeholder": "Temperature"
+                }
+            },
+            {
+                "text" : {
+                    "return" : "city",
+                    "placeholder": "City"
+                }
+            }
+        ]
+    },
+    {
+        "name": "NewDocument",
+        "servicename": "Google",
+        "func": "./google/newgoogledocdocument.trigger",
+        "description": "get a trigger when you have a new google doc document",
+        "toSend": [
+            {
+                "dropdown" : {
+                    "name": "Polling Interval",
+                    "render": "Polling",
+                    "return": "time",
+                    "choices": [
+                        {"render" : "2 minute", "return": 2},
+                        {"render" : "4 minutes", "return": 4},
+                        {"render" : "10 minutes", "return": 10},
+                        {"render" : "15 minutes", "return": 15},
+                        {"render" : "30 minutes", "return": 30}
+                    ]
+                }
+            }
+        ]
+    }
+]

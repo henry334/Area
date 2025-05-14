@@ -1,0 +1,18 @@
+# Logs
+logs
+*.log
+
+# Nest.js generated files
+dist/
+node_modules/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+.env
+
+# Coverage
+coverage/
+.nyc_output/

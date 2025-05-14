@@ -1,0 +1,77 @@
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id       String    @unique @default(uuid())
+  email    String    @unique
+  username String   @default("Anonymous")
+  password String
+  authority String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model BanUsers {
+  id       String    @unique @default(uuid())
+  banEmail    String @unique
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Tasks {
+  id         String    @unique @default(uuid())
+  name       String
+  userId     String
+  triggerId  String
+  triggerData Json
+  actionId   String
+  actionData Json
+}
+
+model ActionsAvailable {
+  id       String    @unique @default(uuid())
+  toSend Json @default("{}")
+  name    String    @unique
+  serviceName  String
+  func   String
+  description String
+  availability Boolean @default(true)
+}
+
+model TriggersAvailable {
+  id       String    @unique @default(uuid())
+  toSend Json @default("{}")
+  name    String    @unique
+  serviceName  String
+  func   String
+  description String
+  availability Boolean @default(true)
+}
+
+model Services {
+  id       String    @unique @default(uuid())
+  name    String    @unique
+  description String
+  logo String    @db.Text
+  color String
+  oauth2url String @default("")
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Oauth2Data {
+  id       String    @unique @default(uuid())
+  userId   String
+  serviceName  String
+  data   Json
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}

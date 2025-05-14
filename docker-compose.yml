@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  ngrok:
+    image: ngrok/ngrok:latest
+    network_mode: "host"
+    environment:
+      - NGROK_AUTHTOKEN=YOUR_TOKEN
+    command: http 8080 --domain=allowed-luckily-woodcock.ngrok-free.app
+    tty: true
+    stdin_open: true
+
+  server:
+    build:
+      context: ./Back
+      dockerfile: Dockerfile
+    network_mode: "host"
+    volumes:
+      - ./Back:/usr/src/app
+
+  client_web:
+    build:
+      context: ./Front/Web
+      dockerfile: Dockerfile
+    depends_on:
+      - client_mobile
+      - server
+    ports:
+      - "8081:8081"
+    volumes:
+      - client-volume:/usr/src/app/output
+      - ./Front/Web:/usr/src/app
+
+  client_mobile:
+    build:
+      context: ./Front/Mobile
+      dockerfile: Dockerfile
+    depends_on:
+      - ngrok
+    ports:
+     - "19000:19000"
+     - "19001:19001"
+     - "19002:19002"
+     - "19006:19006"
+    volumes:
+      - client-volume:/usr/src/app/output
+      - ./Front/Mobile:/usr/src/app
+    networks:
+      - app-network
+    tty: true
+    stdin_open: true
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  client-volume:
